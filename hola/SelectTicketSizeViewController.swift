@@ -14,21 +14,27 @@ class SelectTicketSizeViewController: UIViewController {
 	var selectableSize = Image()
 	var selected:Int32?
 	
+	@IBOutlet weak var mediumBtn: UIButton!
 	@IBOutlet weak var smallBtn: UIButton!
 	
 	@IBAction func selectSmall(_ sender: Any) {
 		selected = selectableSize.smallSize
-		smallBtn.backgroundColor = UIColor.blue
+		smallBtn.backgroundColor = UIColor.yellow
+		mediumBtn.backgroundColor = UIColor.clear
+		self.navigationItem.rightBarButtonItem?.isEnabled = true
 	}
 	
 	@IBAction func selectMedium(_ sender: Any) {
 		selected = selectableSize.mediumSize
+		smallBtn.backgroundColor = UIColor.clear
+		mediumBtn.backgroundColor = UIColor.yellow
+		self.navigationItem.rightBarButtonItem?.isEnabled = true
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.navigationController?.hidesBarsOnTap = false
-		
+		self.navigationItem.rightBarButtonItem?.isEnabled = false
 	}
 
 	override func didReceiveMemoryWarning() {

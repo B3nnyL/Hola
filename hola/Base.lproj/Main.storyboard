@@ -93,13 +93,14 @@
                         <viewLayoutGuide key="safeArea" id="aA1-Z8-4rs"/>
                     </view>
                     <navigationItem key="navigationItem" title="Choose Ticket Size" id="9gO-0A-aiO">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="PmV-Xq-QYD">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="PmV-Xq-QYD">
                             <connections>
                                 <segue destination="hX2-fM-O4s" kind="show" identifier="size" id="sha-Xn-5Pv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="mediumBtn" destination="Mw6-rU-TfV" id="yft-Wj-qWX"/>
                         <outlet property="smallBtn" destination="usJ-9r-nkX" id="M1N-CR-cXl"/>
                     </connections>
                 </viewController>

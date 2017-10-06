@@ -30,6 +30,11 @@ class SelectImagesViewController: UIViewController {
 			print(ticketSize!)
 			self.navigationController?.hidesBarsOnTap = false
         // Do any additional setup after loading the view.
+		if imageView.image == nil {
+			self.navigationItem.rightBarButtonItem?.isEnabled = false
+		} else{
+			self.navigationItem.rightBarButtonItem?.isEnabled = true
+		}
 		
 	}
 
@@ -44,7 +49,8 @@ class SelectImagesViewController: UIViewController {
 		imageView.frame = CGRect(x: screenCenterX, y: screenCenterY, width: CGFloat(ticketSize!), height: CGFloat(ticketSize!))
 		//CGAffineTransform works well, but it doesn't actually rotate the image
 		imageView.image = preparedImage
-		InstructionLbl.text = "For Better Experience, please start your experience in dark environment"
+		self.navigationItem.rightBarButtonItem?.isEnabled = true
+		InstructionLbl.text = "For Better Experience, please start your experience in a dark environment"
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
