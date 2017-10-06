@@ -15,6 +15,7 @@
 		B57643061F7E3E0500421EA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57643051F7E3E0500421EA0 /* AppDelegate.swift */; };
 		B576430B1F7E3E0500421EA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57643091F7E3E0500421EA0 /* Main.storyboard */; };
 		B57643101F7E3E0500421EA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B576430E1F7E3E0500421EA0 /* LaunchScreen.storyboard */; };
+		B5AC8F4B1F87576800943524 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC8F4A1F87576800943524 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B576430A1F7E3E0500421EA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B576430F1F7E3E0500421EA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B57643111F7E3E0500421EA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5AC8F4A1F87576800943524 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				B508C4431F81F696004B3B0C /* SelectImagesViewController.swift */,
 				B56CB74C1F834BAF002A6456 /* image.swift */,
 				B54E55231F86112100C9DC01 /* DisplayViewController.swift */,
+				B5AC8F4A1F87576800943524 /* TableViewController.swift */,
 			);
 			path = hola;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B54E55241F86112100C9DC01 /* DisplayViewController.swift in Sources */,
+				B5AC8F4B1F87576800943524 /* TableViewController.swift in Sources */,
 				B57643061F7E3E0500421EA0 /* AppDelegate.swift in Sources */,
 				B56CB74D1F834BAF002A6456 /* image.swift in Sources */,
 				B508C4441F81F696004B3B0C /* SelectImagesViewController.swift in Sources */,

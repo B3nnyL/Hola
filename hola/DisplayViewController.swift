@@ -21,50 +21,66 @@ class DisplayViewController: UIViewController {
 	
 	var imageSize: Int32?
 	var data: NSData?
+	let screenCenterX = UIScreen.main.bounds.width / 2
+	let screenCenterY = UIScreen.main.bounds.height / 2
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		//register gesture tap for toggle navigation bar
+		self.navigationController?.hidesBarsOnTap = true
 		UIScreen.main.brightness = 1
-		let screenCenterX = UIScreen.main.bounds.width / 2
-		let screenCenterY = UIScreen.main.bounds.height / 2
+		
 		self.view.backgroundColor = UIColor.black
 		
 		if let theData = data as Data?{
 			upImageView.image = UIImage(data: theData)
 		}
 		
-		let width = screenCenterX - CGFloat(imageSize!) / 2
-		let height = screenCenterY - CGFloat(imageSize!)
-		upImageView.frame = CGRect(x: width, y: height, width: CGFloat(imageSize!), height: CGFloat(imageSize!))
-		rightImageView.frame = CGRect(x: width, y: height, width: CGFloat(imageSize!), height: CGFloat(imageSize!))
-		downImageView.frame = CGRect(x: width, y: height, width: CGFloat(imageSize!), height: CGFloat(imageSize!))
-		leftImageView.frame = CGRect(x: width, y: height, width: CGFloat(imageSize!), height: CGFloat(imageSize!))
+		if let size = imageSize {
+			setImageViews(theSize: size)
+		}
+		
 		if let image = upImageView.image{
 			getImage(theImage: image)
 		}
 
-		rightImageView = upImageView.rotatingImage(target: rightImageView, direction: "right",xPos: CGFloat(imageSize!),yPos: CGFloat(imageSize!))
-		downImageView = upImageView.rotatingImage(target: downImageView, direction: "down",xPos:0 ,yPos: CGFloat(imageSize!)*2)
-		leftImageView = upImageView.rotatingImage(target: leftImageView, direction: "left",xPos: -CGFloat(imageSize!),yPos: CGFloat(imageSize!))
+		if let size = imageSize {
+			setImages(theSize: size)
+		}
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
-		self.navigationController?.isNavigationBarHidden = true
+		navigationController?.hidesBarsOnTap = false
 	}
+	
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 			// Dispose of any resources that can be recreated.
 	}
 	
-	func getImage(theImage:UIImage){
+	internal func getImage(theImage:UIImage){
 		rightImageView.image = theImage
 		downImageView.image = theImage
 		leftImageView.image = theImage
 	}
 	
-
+	internal func setImageViews(theSize:Int32?){
+		let width = self.screenCenterX - CGFloat(theSize!) / 2
+		let height = self.screenCenterY - CGFloat(theSize!)
+		
+		upImageView.frame = CGRect(x: width, y: height, width: CGFloat(theSize!), height: CGFloat(theSize!))
+		rightImageView.frame = CGRect(x: width, y: height, width: CGFloat(theSize!), height: CGFloat(theSize!))
+		downImageView.frame = CGRect(x: width, y: height, width: CGFloat(theSize!), height: CGFloat(theSize!))
+		leftImageView.frame = CGRect(x: width, y: height, width: CGFloat(theSize!), height: CGFloat(theSize!))
+	}
+	
+	internal func setImages(theSize:Int32?){
+		rightImageView = upImageView.rotatingImage(target: rightImageView, direction: "right",xPos: CGFloat(theSize!),yPos: CGFloat(theSize!))
+		downImageView = upImageView.rotatingImage(target: downImageView, direction: "down",xPos:0.0 ,yPos: CGFloat(theSize!)*2)
+		leftImageView = upImageView.rotatingImage(target: leftImageView, direction: "left",xPos: -CGFloat(theSize!),yPos: CGFloat(theSize!))
+	}
 
     /*
     // MARK: - Navigation

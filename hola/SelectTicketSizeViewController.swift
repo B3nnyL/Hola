@@ -12,16 +12,22 @@ import UIKit
 class SelectTicketSizeViewController: UIViewController {
 	
 	var selectableSize = Image()
-	@IBOutlet weak var smallSize: UIButton!
-	@IBOutlet weak var mediumSize: UIButton!
+	var selected:Int32?
 	
-	@IBOutlet weak var heightLbl: UILabel!
-	@IBOutlet weak var widthLbl: UILabel!
+	@IBOutlet weak var smallBtn: UIButton!
+	
+	@IBAction func selectSmall(_ sender: Any) {
+		selected = selectableSize.smallSize
+		smallBtn.backgroundColor = UIColor.blue
+	}
+	
+	@IBAction func selectMedium(_ sender: Any) {
+		selected = selectableSize.mediumSize
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		heightLbl.text = getScreenHeight().description
-		widthLbl.text = getScreenWidth().description
+		self.navigationController?.hidesBarsOnTap = false
 		
 	}
 
@@ -39,16 +45,9 @@ class SelectTicketSizeViewController: UIViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		let nc = segue.destination as! UINavigationController
-		let controller = nc.topViewController as! SelectImagesViewController
-		if segue.identifier == "small" {
-				controller.ticketSize = selectableSize.smallSize
-				print(selectableSize.smallSize)
-			
-		}else {
-				controller.ticketSize = selectableSize.mediumSize
-				print(selectableSize.smallSize)
-			
+		let controller = segue.destination as! SelectImagesViewController
+		if segue.identifier == "size" {
+				controller.ticketSize = selected
 		}
 	}
 }

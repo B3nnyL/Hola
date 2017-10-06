@@ -28,6 +28,7 @@ class SelectImagesViewController: UIViewController {
 	override func viewDidLoad() {
 			super.viewDidLoad()
 			print(ticketSize!)
+			self.navigationController?.hidesBarsOnTap = false
         // Do any additional setup after loading the view.
 		
 	}
@@ -47,8 +48,7 @@ class SelectImagesViewController: UIViewController {
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		let nc = segue.destination as! UINavigationController
-		let controller = nc.topViewController as! DisplayViewController
+		let controller = segue.destination as! DisplayViewController
 		if segue.identifier == "finish" {
 			controller.imageSize = ticketSize
 			if let theImage = self.imageView.image{
