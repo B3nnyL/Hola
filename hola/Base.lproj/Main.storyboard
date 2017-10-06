@@ -39,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Your Hologram Ticket Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSk-NF-rLL">
-                                <rect key="frame" x="60" y="180" width="254" height="21"/>
+                                <rect key="frame" x="60" y="136" width="254" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -113,7 +113,7 @@
             </objects>
             <point key="canvasLocation" x="76" y="87.706146926536732"/>
         </scene>
-        <!--Select Images-->
+        <!--Select Your Image-->
         <scene sceneID="mWg-6O-ULb">
             <objects>
                 <viewController id="hX2-fM-O4s" customClass="SelectImagesViewController" customModule="hola" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,73 +121,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59Q-q0-vQt">
-                                <rect key="frame" x="159" y="325" width="57" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your Image for Hologram " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59Q-q0-vQt">
+                                <rect key="frame" x="16" y="142" width="343" height="66"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="57" id="CkT-00-Y4R"/>
-                                    <constraint firstAttribute="height" constant="25" id="U29-7r-R7k"/>
+                                    <constraint firstAttribute="height" constant="66" id="hJL-Nl-LLv"/>
+                                    <constraint firstAttribute="width" constant="343" id="oFg-Bl-R7v"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfX-Y1-8wE">
-                                <rect key="frame" x="77" y="225" width="220" height="30"/>
+                                <rect key="frame" x="67" y="226" width="242" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="242" id="0mI-ST-v1v"/>
+                                    <constraint firstAttribute="height" constant="30" id="g2Q-Vm-blx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Choose Photo from Your Library"/>
                                 <connections>
                                     <action selector="selectFromLibrary:" destination="hX2-fM-O4s" eventType="touchUpInside" id="SD5-Bg-Zvl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgg-UE-7nQ">
-                                <rect key="frame" x="127" y="396" width="89" height="71"/>
+                                <rect key="frame" x="133" y="275" width="108" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="7JL-M2-A8Q"/>
-                                    <constraint firstAttribute="width" constant="89" id="mob-Kb-ENZ"/>
+                                    <constraint firstAttribute="width" constant="108" id="0GA-kk-tqn"/>
+                                    <constraint firstAttribute="height" constant="35" id="4vm-nt-dls"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Take a Photo"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="hX2-fM-O4s" eventType="touchUpInside" id="Q1O-Xe-0Me"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="No Photo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BsZ-Tn-aQC">
-                                <rect key="frame" x="67" y="89" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BsZ-Tn-aQC">
+                                <rect key="frame" x="112" y="363" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="7Nw-DG-KYE"/>
+                                    <constraint firstAttribute="height" constant="150" id="Vgi-Rc-mW9"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RKc-hB-5TM" firstAttribute="bottom" secondItem="Mgg-UE-7nQ" secondAttribute="bottom" constant="200" id="29r-lg-XcJ"/>
-                            <constraint firstItem="59Q-q0-vQt" firstAttribute="top" secondItem="R2H-Nt-hnl" secondAttribute="top" constant="325" id="2I6-D4-UyX"/>
-                            <constraint firstItem="59Q-q0-vQt" firstAttribute="top" secondItem="R2H-Nt-hnl" secondAttribute="top" constant="325" id="3G6-W4-C7h"/>
-                            <constraint firstItem="Mgg-UE-7nQ" firstAttribute="leading" secondItem="R2H-Nt-hnl" secondAttribute="leading" constant="127" id="5nG-Zy-QXG"/>
-                            <constraint firstItem="RKc-hB-5TM" firstAttribute="trailing" secondItem="kfX-Y1-8wE" secondAttribute="trailing" constant="78" id="6kq-qv-HYZ"/>
-                            <constraint firstItem="59Q-q0-vQt" firstAttribute="trailing" secondItem="Mgg-UE-7nQ" secondAttribute="trailing" id="E2m-FH-q39"/>
-                            <constraint firstItem="kfX-Y1-8wE" firstAttribute="leading" secondItem="RKc-hB-5TM" secondAttribute="leading" constant="77" id="G1a-Vi-i4H"/>
-                            <constraint firstItem="59Q-q0-vQt" firstAttribute="centerX" secondItem="kfX-Y1-8wE" secondAttribute="centerX" id="GDl-ft-E4E"/>
-                            <constraint firstAttribute="bottom" secondItem="Mgg-UE-7nQ" secondAttribute="bottom" constant="200" id="Jde-Cx-v32"/>
-                            <constraint firstItem="59Q-q0-vQt" firstAttribute="centerX" secondItem="R2H-Nt-hnl" secondAttribute="centerX" id="KXf-dl-iBu"/>
-                            <constraint firstItem="59Q-q0-vQt" firstAttribute="top" secondItem="kfX-Y1-8wE" secondAttribute="bottom" constant="70" id="Qhf-kb-B9m"/>
-                            <constraint firstItem="59Q-q0-vQt" firstAttribute="leading" secondItem="R2H-Nt-hnl" secondAttribute="leading" constant="159" id="S9c-gU-Tdr"/>
-                            <constraint firstItem="59Q-q0-vQt" firstAttribute="leading" secondItem="RKc-hB-5TM" secondAttribute="leading" constant="159" id="X3U-0a-srp"/>
-                            <constraint firstItem="RKc-hB-5TM" firstAttribute="trailing" secondItem="59Q-q0-vQt" secondAttribute="trailing" constant="159" id="ZSk-2b-ZvE"/>
-                            <constraint firstItem="Mgg-UE-7nQ" firstAttribute="top" secondItem="R2H-Nt-hnl" secondAttribute="top" constant="396" id="fpd-CL-N0c"/>
-                            <constraint firstItem="59Q-q0-vQt" firstAttribute="leading" secondItem="R2H-Nt-hnl" secondAttribute="leading" constant="159" id="hqL-q6-OdB"/>
-                            <constraint firstItem="kfX-Y1-8wE" firstAttribute="top" secondItem="RKc-hB-5TM" secondAttribute="top" constant="161" id="kX6-x6-pr9"/>
-                            <constraint firstItem="RKc-hB-5TM" firstAttribute="trailing" secondItem="Mgg-UE-7nQ" secondAttribute="trailing" constant="159" id="kzX-sE-IJN"/>
-                            <constraint firstItem="Mgg-UE-7nQ" firstAttribute="leading" secondItem="RKc-hB-5TM" secondAttribute="leading" constant="127" id="laR-py-Xyw"/>
-                            <constraint firstItem="Mgg-UE-7nQ" firstAttribute="top" secondItem="59Q-q0-vQt" secondAttribute="bottom" constant="46" id="luU-LJ-r2I"/>
-                            <constraint firstItem="Mgg-UE-7nQ" firstAttribute="leading" secondItem="R2H-Nt-hnl" secondAttribute="leading" constant="127" id="mlP-zA-Oas"/>
+                            <constraint firstItem="59Q-q0-vQt" firstAttribute="top" secondItem="RKc-hB-5TM" secondAttribute="top" constant="78" id="0TI-Bw-Dbi"/>
+                            <constraint firstItem="kfX-Y1-8wE" firstAttribute="leading" secondItem="RKc-hB-5TM" secondAttribute="leading" constant="67" id="9yR-r2-mMk"/>
+                            <constraint firstItem="59Q-q0-vQt" firstAttribute="leading" secondItem="RKc-hB-5TM" secondAttribute="leading" constant="16" id="BuN-Kr-0vu"/>
+                            <constraint firstItem="kfX-Y1-8wE" firstAttribute="top" secondItem="59Q-q0-vQt" secondAttribute="bottom" constant="18" id="HN7-wL-FJS"/>
+                            <constraint firstItem="RKc-hB-5TM" firstAttribute="bottom" secondItem="BsZ-Tn-aQC" secondAttribute="bottom" constant="154" id="M6f-qy-erc"/>
+                            <constraint firstItem="RKc-hB-5TM" firstAttribute="trailing" secondItem="kfX-Y1-8wE" secondAttribute="trailing" constant="66" id="b1c-9S-XcI"/>
+                            <constraint firstItem="Mgg-UE-7nQ" firstAttribute="leading" secondItem="RKc-hB-5TM" secondAttribute="leading" constant="133" id="dNH-H4-pcq"/>
+                            <constraint firstItem="BsZ-Tn-aQC" firstAttribute="top" secondItem="Mgg-UE-7nQ" secondAttribute="bottom" constant="53" id="jAs-g8-bvv"/>
+                            <constraint firstItem="Mgg-UE-7nQ" firstAttribute="top" secondItem="kfX-Y1-8wE" secondAttribute="bottom" constant="19" id="lpL-y4-K32"/>
+                            <constraint firstItem="BsZ-Tn-aQC" firstAttribute="leading" secondItem="RKc-hB-5TM" secondAttribute="leading" constant="112" id="oD2-Dl-HVj"/>
+                            <constraint firstItem="RKc-hB-5TM" firstAttribute="trailing" secondItem="59Q-q0-vQt" secondAttribute="trailing" constant="16" id="sDk-dp-bYR"/>
+                            <constraint firstItem="RKc-hB-5TM" firstAttribute="trailing" secondItem="BsZ-Tn-aQC" secondAttribute="trailing" constant="113" id="wbz-OU-dNG"/>
+                            <constraint firstItem="RKc-hB-5TM" firstAttribute="trailing" secondItem="Mgg-UE-7nQ" secondAttribute="trailing" constant="134" id="xMN-IN-OgE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RKc-hB-5TM"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Images" id="PdP-HL-UI8">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="mwr-l9-WOf">
+                    <navigationItem key="navigationItem" title="Select Your Image" id="PdP-HL-UI8">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="YPh-tk-OUW">
+                            <connections>
+                                <segue destination="YDp-wX-Ski" kind="showDetail" id="d5T-0n-55j"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="mwr-l9-WOf">
                             <connections>
                                 <segue destination="oqg-gO-Cck" kind="show" identifier="finish" id="UZc-TC-uve"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="InstructionLbl" destination="59Q-q0-vQt" id="ZS5-GV-fuz"/>
                         <outlet property="imageView" destination="BsZ-Tn-aQC" id="RdV-Jb-yPx"/>
                     </connections>
                 </viewController>
@@ -276,7 +283,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oqg-gO-Cck" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dMh-FI-Hue">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dMh-FI-Hue">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -295,5 +302,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="weC-5G-O11"/>
+        <segue reference="d5T-0n-55j"/>
     </inferredMetricsTieBreakers>
 </document>

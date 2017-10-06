@@ -24,25 +24,33 @@ class DisplayViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-			var height = Int(UIScreen.main.bounds.size.height / 4)
-			var width = Int(UIScreen.main.bounds.size.width / 4)
-//		var newPoint = CGPoint(x: height, y: width)
-//		draw(CGRect(origin: newPoint, size: CGSize(width: 2, height: 2))
+		UIScreen.main.brightness = 1
+		let screenCenterX = UIScreen.main.bounds.width / 2
+		let screenCenterY = UIScreen.main.bounds.height / 2
+		self.view.backgroundColor = UIColor.black
 		
 		if let theData = data as Data?{
 			upImageView.image = UIImage(data: theData)
 		}
-		upImageView.frame = CGRect(x: height, y: width, width: Int(imageSize!), height: Int(imageSize!))
-		downImageView.frame = CGRect(x: height, y: width, width: Int(imageSize!), height: Int(imageSize!))
-		rightImageView.frame = CGRect(x: height, y: width, width: Int(imageSize!), height: Int(imageSize!))
-		leftImageView.frame = CGRect(x: height, y: width, width: Int(imageSize!), height: Int(imageSize!))
+		
+		let width = screenCenterX - CGFloat(imageSize!) / 2
+		let height = screenCenterY - CGFloat(imageSize!)
+		upImageView.frame = CGRect(x: width, y: height, width: CGFloat(imageSize!), height: CGFloat(imageSize!))
+		rightImageView.frame = CGRect(x: width, y: height, width: CGFloat(imageSize!), height: CGFloat(imageSize!))
+		downImageView.frame = CGRect(x: width, y: height, width: CGFloat(imageSize!), height: CGFloat(imageSize!))
+		leftImageView.frame = CGRect(x: width, y: height, width: CGFloat(imageSize!), height: CGFloat(imageSize!))
 		if let image = upImageView.image{
 			getImage(theImage: image)
 		}
 
-		rightImageView = upImageView.rotatingImage(target: rightImageView, direction: "right")
-		downImageView = upImageView.rotatingImage(target: downImageView, direction: "down")
-		leftImageView = upImageView.rotatingImage(target: leftImageView, direction: "left")
+		rightImageView = upImageView.rotatingImage(target: rightImageView, direction: "right",xPos: CGFloat(imageSize!),yPos: CGFloat(imageSize!))
+		downImageView = upImageView.rotatingImage(target: downImageView, direction: "down",xPos:0 ,yPos: CGFloat(imageSize!)*2)
+		leftImageView = upImageView.rotatingImage(target: leftImageView, direction: "left",xPos: -CGFloat(imageSize!),yPos: CGFloat(imageSize!))
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		self.navigationController?.isNavigationBarHidden = true
 	}
 
 	override func didReceiveMemoryWarning() {

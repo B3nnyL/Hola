@@ -11,6 +11,7 @@ import CoreGraphics
 
 class SelectImagesViewController: UIViewController {
 
+	@IBOutlet weak var InstructionLbl: UILabel!
 	var ticketSize: Int32?
 	@IBOutlet weak var imageView: UIImageView!
 	@IBAction func takePhoto(_ sender: Any) {
@@ -20,6 +21,10 @@ class SelectImagesViewController: UIViewController {
 	@IBAction func selectFromLibrary(_ sender: Any) {
 		choosePhotoFromLibrary()
 	}
+	
+	let screenCenterX = UIScreen.main.bounds.width / 2
+	let screenCenterY = UIScreen.main.bounds.height / 2
+	
 	override func viewDidLoad() {
 			super.viewDidLoad()
 			print(ticketSize!)
@@ -35,9 +40,10 @@ class SelectImagesViewController: UIViewController {
 	func showImage(preparedImage: UIImage) {
 		imageView.image = preparedImage
 		imageView.isHidden = false
-		imageView.frame = CGRect(x: 100, y: 100, width: Int(ticketSize!), height: Int(ticketSize!))
+		imageView.frame = CGRect(x: screenCenterX, y: screenCenterY, width: CGFloat(ticketSize!), height: CGFloat(ticketSize!))
 		//CGAffineTransform works well, but it doesn't actually rotate the image
 		imageView.image = preparedImage
+		InstructionLbl.text = "For Better Experience, please start your experience in dark environment"
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -88,28 +94,26 @@ extension SelectImagesViewController: UIImagePickerControllerDelegate, UINavigat
 }
 
 extension UIImageView {
-	func rotatingImage(target: UIImageView, direction: String) -> UIImageView{
-		var height = UIScreen.main.bounds.size.height / 2
-		var width = UIScreen.main.bounds.size.width / 2
+	func rotatingImage(target: UIImageView, direction: String,xPos: CGFloat, yPos: CGFloat) -> UIImageView{
 		switch direction {
 		case "up":
-			target.transform =  rotateAroundCentralPoint(angle: CGFloat(Double.pi * 0 / 2), pointX: CGFloat(width), pointY: CGFloat(height))
+			target.transform =  CGAffineTransform(rotationAngle: CGFloat(Double.pi * 0 / 2)).concatenating(CGAffineTransform(translationX: xPos, y: yPos))
 		case "right":
-			target.transform =  rotateAroundCentralPoint(angle: CGFloat(Double.pi * 1 / 2), pointX: CGFloat(width), pointY: CGFloat(height))
+			target.transform =  CGAffineTransform(rotationAngle: CGFloat(Double.pi * 1 / 2)).concatenating(CGAffineTransform(translationX: xPos, y: yPos))
 			print(target.center.x)
 		case "down":
-			target.transform =  rotateAroundCentralPoint(angle: CGFloat(Double.pi * 2 / 2), pointX: CGFloat(width), pointY: CGFloat(height))
+			target.transform =  CGAffineTransform(rotationAngle: CGFloat(Double.pi * 2 / 2)).concatenating(CGAffineTransform(translationX: xPos, y: yPos))
 			print(target.center.x)
 		case "left":
-			target.transform =  rotateAroundCentralPoint(angle: CGFloat(Double.pi * 3 / 2), pointX: CGFloat(width), pointY: CGFloat(height))
+			target.transform =  CGAffineTransform(rotationAngle: CGFloat(Double.pi * 3 / 2)).concatenating(CGAffineTransform(translationX: xPos, y: yPos))
 			print(target.center.x)
 		default:
-			target.transform =  rotateAroundCentralPoint(angle: CGFloat(Double.pi * 0 / 2), pointX: 0, pointY: 0)
+			target.transform =  CGAffineTransform(rotationAngle: CGFloat(Double.pi * 0 / 2)).concatenating(CGAffineTransform(translationX: xPos, y: yPos))
 		}
 		return target
 	}
 	
-	func rotateAroundCentralPoint(angle:CGFloat, pointX:CGFloat, pointY:CGFloat)-> CGAffineTransform{
+	func rotateAroundExternalPoint(angle:CGFloat, pointX:CGFloat, pointY:CGFloat)-> CGAffineTransform{
 		return CGAffineTransform(a: cos(angle), b: sin(angle), c: -sin(angle), d: cos(angle),
 		                         tx: pointX-pointX*cos(angle)+pointY*sin(angle), ty: pointY-pointX*sin(angle)-pointY*cos(angle))
 	}
