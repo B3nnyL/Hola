@@ -25,10 +25,10 @@ class SelectTicketSizeViewController: UIViewController {
 		
 	}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+	override func didReceiveMemoryWarning() {
+			super.didReceiveMemoryWarning()
+			// Dispose of any resources that can be recreated.
+	}
 	
 	func  getScreenHeight() -> CGFloat {
 		return UIScreen.main.bounds.size.height
@@ -42,26 +42,13 @@ class SelectTicketSizeViewController: UIViewController {
 		let nc = segue.destination as! UINavigationController
 		let controller = nc.topViewController as! SelectImagesViewController
 		if segue.identifier == "small" {
-			
 				controller.ticketSize = selectableSize.smallSize
 				print(selectableSize.smallSize)
 			
 		}else {
-		
 				controller.ticketSize = selectableSize.mediumSize
 				print(selectableSize.smallSize)
 			
 		}
 	}
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

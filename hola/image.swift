@@ -9,6 +9,6 @@
 import Foundation
 
 struct Image{
-	let smallSize = 43
-	let mediumSize = 100
+	let smallSize: Int32 = 43
+	let mediumSize: Int32 = 100
 }
