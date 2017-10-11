@@ -20,6 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Take photo for hola</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Add photo from your library for hola</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -41,9 +45,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Add photo from your library for hola</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Take photo for hola</string>
 </dict>
 </plist>
