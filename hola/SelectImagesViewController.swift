@@ -63,7 +63,6 @@ class SelectImagesViewController: UIViewController {
 			}
 		}
 	}
-	
 }
 
 extension SelectImagesViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -123,6 +122,7 @@ extension UIImageView {
 		return CGAffineTransform(a: cos(angle), b: sin(angle), c: -sin(angle), d: cos(angle),
 		                         tx: pointX-pointX*cos(angle)+pointY*sin(angle), ty: pointY-pointX*sin(angle)-pointY*cos(angle))
 	}
+	
 	func resizeImage(target: UIImageView, originSize: CGFloat, targetSize: CGFloat) -> UIImageView{
 		let ratio = targetSize / originSize
 		target.transform = CGAffineTransform(scaleX: ratio,y: ratio)

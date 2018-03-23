@@ -54,6 +54,11 @@ class DisplayViewController: UIViewController {
 		navigationController?.hidesBarsOnTap = false
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		self.navigationController?.setNavigationBarHidden(true, animated: animated)
+	}
+	
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
